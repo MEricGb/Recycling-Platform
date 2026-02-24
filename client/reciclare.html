@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reciclare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Platforma de Reciclare</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="educatie.html">Educație</a></li>
+        <li><a href="reciclare.html" class="active">Reciclare</a></li>
+        <li><a href="evenimente.html">Evenimente</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="clasament.html">Clasament</a></li>
+        <li><a href="profil.html">Profil</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Înregistrează un deșeu reciclat</h2>
+    <form id="reciclare-form">
+      <label for="tip">Tip deșeu:</label>
+      <select id="tip" name="tip" required>
+        <option value="">Selectează...</option>
+        <option value="plastic">Plastic</option>
+        <option value="hartie">Hârtie</option>
+        <option value="sticla">Sticlă</option>
+        <option value="metal">Metal</option>
+        <option value="electronic">Electronic</option>
+      </select>
+      <label for="cantitate">Cantitate (bucăți):</label>
+      <input type="number" id="cantitate" name="cantitate" min="1" step="1" required>
+      <button type="submit">Trimite</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2025 Platforma Reciclare</p>
+  </footer>
+  <script src="js/reciclare.js" defer></script>
+</body>
+</html>

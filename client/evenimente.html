@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Evenimente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Platforma de Reciclare</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="educatie.html">Educație</a></li>
+        <li><a href="reciclare.html">Reciclare</a></li>
+        <li><a href="evenimente.html" class="active">Evenimente</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="clasament.html">Clasament</a></li>
+        <li><a href="profil.html">Profil</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Evenimente de Reciclare</h2>
+    <div id="events-list" class="history-list">
+      <p>Se încarcă evenimentele...</p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Platforma Reciclare</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const container = document.getElementById('events-list');
+      try {
+        const res = await fetch('/api/events');
+        const events = await res.json();
+        if (events.length === 0) {
+          container.innerHTML = '<p>Nu există evenimente programate.</p>';
+          return;
+        }
+        container.innerHTML = events.map(e => `
+          <div class="history-item">
+            <span><strong>${e.title}</strong></span>
+            <span>${e.date} - ${e.location}</span>
+          </div>
+        `).join('');
+      } catch (err) {
+        container.innerHTML = '<p>Eroare la încărcarea evenimentelor.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

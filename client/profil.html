@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Profil</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Platforma de Reciclare</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="educatie.html">Educație</a></li>
+        <li><a href="reciclare.html">Reciclare</a></li>
+        <li><a href="evenimente.html">Evenimente</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="clasament.html">Clasament</a></li>
+        <li><a href="profil.html" class="active">Profil</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="profile-header">
+      <h2>Profilul Tău</h2>
+      <p id="user-name" class="user-name">Se încarcă...</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-value" id="total-points">0</div>
+        <div class="stat-label">Puncte Totale</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">♻️</div>
+        <div class="stat-value" id="total-recycled">0</div>
+        <div class="stat-label">Iteme Reciclate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <div class="stat-value" id="quiz-count">0</div>
+        <div class="stat-label">Quiz-uri Completate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-value" id="best-score">0</div>
+        <div class="stat-label">Cel Mai Bun Scor</div>
+      </div>
+    </div>
+
+    <!-- Recycling by Material -->
+    <section class="profile-section">
+      <h3>Reciclare pe Categorii</h3>
+      <div id="recycling-breakdown" class="breakdown-grid">
+        <p>Nicio reciclare înregistrată.</p>
+      </div>
+    </section>
+
+    <!-- Recent Activity -->
+    <section class="profile-section">
+      <h3>Activitate Recentă Quiz</h3>
+      <div id="quiz-history" class="history-list">
+        <p>Niciun quiz completat.</p>
+      </div>
+    </section>
+
+    <button id="logout" class="logout-btn">Logout</button>
+  </main>
+  <footer>
+    <p>&copy; 2025 Platforma Reciclare</p>
+  </footer>
+  <script src="js/profil.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>
